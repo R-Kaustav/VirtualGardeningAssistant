@@ -1,0 +1,52 @@
+{% extends 'navbar/projectnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f0f8ff; display: flex; justify-content: center; align-items: center; height: 100vh;">
+{% block body %}
+<div style="background-color: #ffffff; padding: 50px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); width: 100%; height: 100%; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
+    <div style="width: 100%; max-width: 500px;">
+        <h2 style="color: #333333; text-align: center; margin-bottom: 20px;">Register</h2>
+        <form action="{% url 'UserRegisterLogic' %}" method="post" style="width: 100%;">
+            {% csrf_token %}
+            <table style="width: 100%; margin: 0 auto;">
+                <tr>
+                    <td align="right" style="padding: 10px 10px 10px 0; color: #333333;">username:</td>
+                    <td><input type="text" name="username" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></td>
+                </tr>
+                <tr>
+                    <td align="right" style="padding: 10px 10px 10px 0; color: #333333;">first_name:</td>
+                    <td><input type="text" name="first_name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></td>
+                </tr>
+                <tr>
+                    <td align="right" style="padding: 10px 10px 10px 0; color: #333333;">last_name:</td>
+                    <td><input type="text" name="last_name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></td>
+                </tr>
+
+                <tr>
+                    <td align="right" style="padding: 10px 10px 10px 0; color: #333333;">Email:</td>
+                    <td><input type="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></td>
+                </tr>
+                <tr>
+                    <td align="right" style="padding: 10px 10px 10px 0; color: #333333;">Password:</td>
+                    <td><input type="password" name="pass1" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></td>
+                </tr>
+                <tr>
+                    <td align="right" style="padding: 10px 10px 10px 0; color: #333333;">Confirm Password:</td>
+                    <td><input type="password" name="pass2" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" style="padding-top: 20px;">
+                        <input type="submit" value="Register" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- templates/register.html -->
+{% extends 'Navbar/Projectnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+{% block body %}
+    <h1>Login</h1>
+    <form action="{% url 'UserLoginLogic' %}" method="post" style="max-width: 400px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #f8f9fa;">
+        {% csrf_token %}
+         <div class="mb-3" style="margin-bottom: 15px;">
+            <label for="username" class="form-label" style="font-weight: bold; color: #495057;">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required style="border: 1px solid #ced4da; border-radius: 5px; padding: 10px; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);">
+        </div>
+  <div class="mb-3" style="margin-bottom: 15px;">
+    <label for="exampleInputPassword1" class="form-label" style="font-weight: bold; color: #495057;">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" style="border: 1px solid #ced4da; border-radius: 5px; padding: 10px; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);">
+  </div>
+  <div class="mb-3 form-check" style="margin-bottom: 15px;">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-top: 0.3rem;">
+    <label class="form-check-label" for="exampleCheck1" style="color: #495057;">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary" style="background-color: #007bff; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer;">Submit</button>
+        <p style="margin-top: 20px; color: #495057; text-align: center; font-size: 14px;">If you are not registered, then first you <a href="{% url 'UserRegisterPageCall' %}" style="color: #007bff; text-decoration: none;">register.</p>
+</form>
+
+    <!-- Registration form goes here -->
+{% endblock %}
+</body>
+</html>

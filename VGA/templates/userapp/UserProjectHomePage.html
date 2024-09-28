@@ -1,0 +1,64 @@
+{% extends "Navbar/ProjectNavbar.html" %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Virtual Gardening Assistant</title>
+
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1LfyILyRaVVDDAY" crossorigin="anonymous">
+</head>
+<body>
+{% block body %}
+
+    <!-- Header section -->
+
+    <!-- Carousel -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/p5.jpg' %}" class="d-rectangle w-100" alt="Gardening Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/p4.jpeg' %}" class="d-rectangle w-100" alt="Gardening Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/slide1.jpeg' %}" class="d-rectangle w-100" alt="Gardening Image 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+
+    <!-- New section with light lime green background -->
+    <section style="background-color: #727C83; padding: 20px;">
+        <header class="header">
+        <center><h1>Welcome to the Virtual Gardening Assistant</h1></center>
+    </header>
+        <center><h2>Explore More Gardening Tips</h2></center>
+        <p></p>
+    </section>
+
+{% endblock %}
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-mQ93tyD5wIQiak9INhW2Rl3WE2nwxAzzxSVfUWouq6URFp7FUd1i4w33BluzKKTt" crossorigin="anonymous"></script>
+</body>
+</html>

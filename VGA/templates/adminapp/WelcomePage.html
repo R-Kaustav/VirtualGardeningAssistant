@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Virtual Gardening Assistant</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1LfyILyRaVVDDAY" crossorigin="anonymous">
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+    <div id="welcomeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- First Slide: Video Background -->
+            <div class="carousel-item active video-slide">
+                <video autoplay muted loop>
+                    <source src="{% static 'video/vid.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="carousel-caption">
+                    <h1>Welcome to Plant Pal</h1>
+                    <p>Transforming your gardening experience</p>
+                </div>
+                <!-- Login and Registration Button Box -->
+                <div class="btn-box">
+                    <a href="{% url 'UserLoginPageCall' %}" class="btn btn-primary">Login</a>
+                    <a href="{% url 'UserRegisterPageCall' %}" class="btn btn-secondary">Register</a>
+                </div>
+            </div>
+
+            <!-- Second Slide: With New Content -->
+            <div class="carousel-item dark-bg">
+                <div class="container content">
+                    <!-- Image Section -->
+                    <div class="image-content">
+                        <img src="{% static 'images/pic4.jpg' %}" alt="Garden Image" class="img-fluid">
+                    </div>
+
+                    <!-- Text Section -->
+                    <div class="text-content">
+                        <h2>The Importance of Gardening</h2>
+                        <p>Gardening not only enhances the beauty of your surroundings but also promotes mental well-being, reduces stress, and encourages a healthier lifestyle.</p>
+                        <ul class="checklist">
+                            <li>Improves physical and mental health.</li>
+                            <li>Contributes to environmental sustainability.</li>
+                            <li>Encourages a sense of accomplishment and connection with nature.</li>
+                        </ul>
+                        <p>Whether you're growing your own food or planting flowers, gardening is a rewarding and beneficial activity for individuals and communities alike.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Row -->
+    <section style="background-color:#727C83">
+        <div class="section-item">
+            <h2>Wheater Integration</h2>
+            <a href="{% url 'weatherintegration' %}"><img src="{% static 'images/w1.jpeg' %}" alt="Wheater Integration"></a>
+        </div>
+
+        <div class="section-item">
+            <h2>Task Reminder</h2>
+            <a href="{% url 'taskreminder' %}"><img src="{% static 'images/t1.jpeg' %}" alt="Task Reminder"></a>
+        </div>
+
+        <div class="section-item">
+            <h2>Plant Tracker</h2>
+            <a href="{% url 'planttracker' %}"><img src="{% static 'images/pt1.jpeg' %}" alt="Plant Tracker"></a>
+        </div>
+    </section>
+
+    <!-- Duplicate Card Row (optional, remove if not needed) -->
+    <section style="background-color:#727C83">
+        <div class="section-item">
+            <h2>Garden Planning</h2>
+            <a href="{% url 'gardenplanning' %}"><img src="{% static 'images/gp1.jpeg' %}" alt="Garden Planning"></a>
+        </div>
+
+        <div class="section-item">
+            <h2>Gardening Tips</h2>
+            <a href="{% url 'gardeningtips' %}"><img src="{% static 'images/leaves.jpeg' %}" alt="Gardening Tips"></a>
+        </div>
+
+        <div class="section-item">
+            <h2>Chat with Us</h2>
+            <a href="{% url 'chatbot' %}"><img src="{% static 'images/chat.png' %}" alt="Chat"></a>
+        </div>
+    </section>
+
+    <!-- New Section with Learn More Button -->
+<section style="background-color: #e0e0e0; padding: 50px; text-align: center;">
+    <h2>Learn More About Gardening</h2>
+    <p>Discover more tips, tricks, and tools that can enhance your gardening experience.</p>
+    <a href="{% url 'UserRegisterPageCall' %}" class="btn btn-black btn-lg">   Learn More</a>
+</section>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-mQ93tyD5wIQiak9INhW2Rl3WE2nwxAzzxSVfUWouq6URFp7FUd1i4w33BluzKKTt" crossorigin="anonymous"></script>
+</body>
+</html>
